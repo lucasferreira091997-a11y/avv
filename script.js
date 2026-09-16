@@ -25,7 +25,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
   };
 
   // Envio usando seu Service ID e Template ID exatos
-  emailjs.send('service_5ybkyqe', 'template_wylz5jm', templateParams)
+  emailjs.send('service_lart1lf', 'template_wylz5jm', templateParams)
     .then(() => {
       responseMessage.style.color = 'green';
       responseMessage.textContent = 'Obrigado! Sua avaliação foi enviada por e-mail.';

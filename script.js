@@ -24,7 +24,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
   };
 
   // 2. Service ID e Template ID da sua conta
-  emailjs.send('service_lart1lf', 'template_wylz5jm', templateParams)
+  emailjs.send('service_ufewine', 'template_wylz5jm', templateParams)
     .then(() => {
       responseMessage.style.color = 'green';
       responseMessage.textContent = 'Obrigado! Sua avaliação foi enviada por e-mail.';

@@ -1,4 +1,4 @@
-// Inicialização com a sua Public Key real
+// 1. Sua Public Key (verificada)
 emailjs.init("SrFhKM0O7WUl5jakb");
 
 document.getElementById('feedbackForm').addEventListener('submit', function(event) {
@@ -10,21 +10,20 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
   submitBtn.textContent = 'Enviando...';
   submitBtn.disabled = true;
 
-  // Pega a nota selecionada nos radios
   const selectedRating = document.querySelector('input[name="star"]:checked');
   const ratingValue = selectedRating ? selectedRating.value : 'Não informada';
   const commentValue = document.getElementById('comment').value;
 
-  // Parâmetros mapeados para o seu template
+  // Parâmetros mapeados
   const templateParams = {
     rating: ratingValue,
     comment: commentValue,
     message: commentValue,
     from_name: "Cliente do Site",
-    from_email: "no-reply@seu-site.com"
+    from_email: "cliente@email.com"
   };
 
-  // Envio usando seu Service ID e Template ID exatos
+  // 2. Service ID e Template ID da sua conta
   emailjs.send('service_lart1lf', 'template_wylz5jm', templateParams)
     .then(() => {
       responseMessage.style.color = 'green';
@@ -34,7 +33,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
     .catch((error) => {
       responseMessage.style.color = 'red';
       responseMessage.textContent = 'Erro ao enviar. Tente novamente.';
-      console.error('Erro EmailJS:', error);
+      console.error('Erro detalhado:', error);
     })
     .finally(() => {
       submitBtn.textContent = 'Enviar Avaliação';

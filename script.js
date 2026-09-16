@@ -21,7 +21,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
     comment: commentValue,
     message: commentValue,
     from_name: "Cliente do Site",
-    from_email: "cliente@email.com"
+    from_email: "no-reply@seu-site.com"
   };
 
   // Envio usando seu Service ID e Template ID exatos

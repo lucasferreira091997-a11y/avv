@@ -1,4 +1,4 @@
-// Substitua pela sua Public Key do EmailJS
+// Inicialização com a sua Public Key real
 emailjs.init("SrFhKM0O7WUl5jakb");
 
 document.getElementById('feedbackForm').addEventListener('submit', function(event) {
@@ -10,15 +10,21 @@ document.getElementById('feedbackForm').addEventListener('submit', function(even
   submitBtn.textContent = 'Enviando...';
   submitBtn.disabled = true;
 
-  const rating = document.querySelector('input[name="star"]:checked').value;
-  const comment = document.getElementById('comment').value;
+  // Pega a nota selecionada nos radios
+  const selectedRating = document.querySelector('input[name="star"]:checked');
+  const ratingValue = selectedRating ? selectedRating.value : 'Não informada';
+  const commentValue = document.getElementById('comment').value;
 
+  // Parâmetros mapeados para o seu template
   const templateParams = {
-    rating: rating,
-    comment: comment
+    rating: ratingValue,
+    comment: commentValue,
+    message: commentValue,
+    from_name: "Cliente do Site",
+    from_email: "cliente@email.com"
   };
 
-  // Substitua 'SEU_SERVICE_ID' e 'SEU_TEMPLATE_ID'
+  // Envio usando seu Service ID e Template ID exatos
   emailjs.send('service_dfz5feh', 'template_5xoxyve', templateParams)
     .then(() => {
       responseMessage.style.color = 'green';

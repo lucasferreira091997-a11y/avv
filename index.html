@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Avaliação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h2>Avalie o Nosso Serviço</h2>
+    <p>Sua opinião é muito importante para nós!</p>
+
+    <form id="feedbackForm">
+      <div class="rating">
+        <label><input type="radio" name="star" value="1" required> 1⭐</label>
+        <label><input type="radio" name="star" value="2"> 2⭐</label>
+        <label><input type="radio" name="star" value="3"> 3⭐</label>
+        <label><input type="radio" name="star" value="4"> 4⭐</label>
+        <label><input type="radio" name="star" value="5"> 5⭐</label>
+      </div>
+
+      <textarea id="comment" placeholder="Escreva seu comentário..." required></textarea>
+      <button type="submit" id="submitBtn">Enviar Avaliação</button>
+    </form>
+    <p id="responseMessage"></p>
+  </div>
+
+  <!-- Biblioteca do EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
